@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>皇冠体育 · 赛事资讯与信息参考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f2f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.65;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        .page {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 3.5rem 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.2s;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #475569;
+            max-width: 720px;
+            border-left: 4px solid #94a3b8;
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero .bread {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 0.25rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #334155;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* 卡片通用 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.4rem;
+        }
+
+        .card p {
+            margin-bottom: 0.85rem;
+            color: #1e293b;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #eef2f6;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            color: #1e293b;
+            margin-right: 0.4rem;
+            margin-bottom: 0.25rem;
+            border: 1px solid #d1d9e6;
+        }
+
+        .inline-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b7c9e8;
+            transition: border-color 0.15s, color 0.1s;
+        }
+
+        .inline-link:hover {
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+        }
+
+        .faq-summary {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            border: 1px solid #e2e8f0;
+            margin-top: 1.8rem;
+        }
+
+        .faq-summary h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .faq-summary h3::before {
+            content: "❓";
+            font-size: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.65rem;
+            padding-left: 0.2rem;
+        }
+
+        .faq-item dt {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item dd {
+            color: #475569;
+            margin-left: 0.6rem;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            padding: 1.4rem 0;
+            border-top: 1px solid #dce2ec;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .footer-note a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #b7c9e8;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #1d4ed8;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            body {
+                padding: 1.2rem 1rem 2rem;
+            }
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+            .faq-summary {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .hero .sub {
+                font-size: 0.95rem;
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 首页横幅 / hero -->
+    <div class="hero">
+        <div class="bread">📋 杂志专题 · 信息参考</div>
+        <h1>赛事查询 · 对照与延伸阅读</h1>
+        <div class="sub">
+            从日常数据检索、赛事背景核实，到趋势对照——这里提供结构化的信息聚合视角。
+        </div>
+    </div>
+
+    <!-- 三段自然介绍 + 卡片式分区 -->
+    <div class="card-grid">
+
+        <!-- 卡片1：日常查询与背景说明 -->
+        <div class="card">
+            <h2>📊 日常查询 · 赛事背景</h2>
+            <p>对于关注体育赛事动态的用户，快速查阅赛程、积分及历史对阵是最基础的需求。通过整合公开的联赛数据与赛季节点，<a href="https://zho-crownsports.com" class="inline-link">皇冠体育</a> 提供了一套便于对照的资讯框架，帮助使用者在浏览时快速定位关键信息，减少反复检索的成本。</p>
+            <p>在信息核实方面，平台覆盖多种主流联赛及杯赛，并保持赛事数据的阶段性更新。无论是核对近期战绩，还是回顾往季排名，都能在统一的信息结构中找到对应内容。</p>
+            <div>
+                <span class="tag">⚽ 联赛积分</span>
+                <span class="tag">🏀 赛程对照</span>
+                <span class="tag">📅 赛季节点</span>
+            </div>
+        </div>
+
+        <!-- 卡片2：延伸阅读与对照视角 -->
+        <div class="card">
+            <h2>📎 延伸阅读 · 趋势对照</h2>
+            <p>单一数据点往往缺乏参照意义。通过将不同赛季、不同分区的表现并列展示，用户可以自行对比趋势变化。例如，主客场战绩差异、近期交锋记录以及阶段性胜率波动，这些维度的对照有助于形成更立体的观察。</p>
+            <p><a href="https://zho-crownsports.com" class="inline-link">皇冠体育</a> 在内容组织上强调「可对照」的阅读体验：同一页面内整合相关队伍的近期表现与历史数据，减少在多个页面之间切换的繁琐。同时，页面结构保持简洁，便于在移动设备上快速浏览。</p>
+            <p>此外，专题页会不定期整理「赛事关键节点回顾」或「赛季数据摘要」，供有延伸阅读需求的用户作为补充参考。</p>
+            <div>
+                <span class="tag">📈 胜率对比</span>
+                <span class="tag">🏟️ 主客场表现</span>
+                <span class="tag">⚡ 近期交锋</span>
+            </div>
+        </div>
+
+        <!-- 卡片3：场景与使用提示 -->
+        <div class="card">
+            <h2>🧭 使用场景 · 信息整合</h2>
+            <p>在实际使用中，以下三类场景较为常见：</p>
+            <p><strong>① 赛前快速查阅</strong> —— 比赛日当天核对双方近期状态、伤病信息与历史交锋。平台将相关队伍数据集中在同一区域，减少跳转。</p>
+            <p><strong>② 赛后数据核实</strong> —— 对照最终比分与赛前预期，辅助理解走势。页面提供基础统计维度，如控球率、射门次数等（依据赛事覆盖范围）。</p>
+            <p><strong>③ 长期趋势观察</strong> —— 通过分阶段或分赛季的数据陈列，辅助追踪球队或选手的阶段性变化。该场景尤其适合希望进行独立分析的用户。</p>
+            <p>需要提醒的是，所有信息均来自公开渠道，并保持定期更新；但用户仍应结合官方公告或实时直播进行最终确认。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 (紧凑) -->
+    <div class="faq-summary">
+        <h3>常见问题摘要</h3>
+        <dl class="faq-item">
+            <dt>数据更新频率如何？</dt>
+            <dd>主要联赛数据在每个比赛日结束后次日更新；杯赛及次级联赛视赛事进度同步调整。</dd>
+        </dl>
+        <dl class="faq-item">
+            <dt>是否包含所有体育项目？</dt>
+            <dd>目前以足球、篮球主流联赛为核心，同时覆盖部分网球、橄榄球及电竞赛事，具体范围可参考站内分类。</dd>
+        </dl>
+        <dl class="faq-item">
+            <dt>移动端阅读体验如何？</dt>
+            <dd>页面采用响应式布局，在手机与平板设备上均可获得清晰的卡片式浏览体验。</dd>
+        </dl>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        若需查看更多赛事数据与信息对照，可访问 <a href="https://zho-crownsports.com">皇冠体育</a> 查阅完整页面。
+    </div>
+
+</div>
+</body>
+</html>
